@@ -17,17 +17,18 @@ The library currently provides two main types:
 - `Taylor<T>` (1D expansion)
 
   Computes coefficients $f_n$ up to order $N$:
-  $$
-  f(x_0 + \delta x) = \sum_{n=0}^{N} f_n \, \delta x^n + \mathcal{O}(\delta x^{N+1}).
-  $$
+  
+$$
+  f(x_0 + \delta x) = \sum_{n=0}^{N} f_n \delta x^n + \mathcal{O}(\delta x^{N+1}).
+$$
 
 - `Taylor2<T>` (2D total-degree expansion)
 
   Computes coefficients $f_{m,n}$ on a dense triangular grid:
-  $$
-  f(x_0 + \delta x, y_0 + \delta y)
-  = \sum_{0 \leq m + n \leq N} f_{m,n} \, \delta x^m \, \delta y^n.
-  $$
+  
+$$
+  f(x_0 + \delta x, y_0 + \delta y) = \sum_{0 \leq m + n \leq N} f_{m,n} \delta x^m \delta y^n + \mathcal{O}\left(\delta r^{N+1}\right).
+$$
 
 In both cases, coefficients are stored in a contiguous `std::vector<T>` for memory locality. This choice was intentional for ease of use and flexibility in the initial designation of expansion order, but the library ensures that no dynamic resizing is performed afterward.
 
