@@ -66,7 +66,7 @@ int main() {
 Here, we compare `taylorcpp` with two representative libraries:
 
 - [TaylorSeries.jl](https://github.com/JuliaDiff/TaylorSeries.jl): a feature-rich Julia library for general Taylor series computations 
-- [GTPSA](https://github.com/bmad-sim/GTPSA.jl): a truncated power series algebra (TPSA) engine with a highly optimized C backend
+- [GTPSA.jl](https://github.com/bmad-sim/GTPSA.jl): a Julia wrapper around [GTPSA](https://github.com/MethodicalAcceleratorDesign/MAD-NG), a highly optimized truncated power series algebra (TPSA) engine implemented in C/C++
 
 All tests are performed on 2D Taylor series with a truncation of $N = 50$ (1326 coefficients). We consider dense 2D series where the coefficients are populated manually with a deterministic rule. The benchmark scripts can be found in `bench/`. The Julia benchmarks are properly warmed up to avoid JIT latency, and all implementations were verified to produce consistent results down to double‑precision accuracy through a weighted sum over all coefficients. (Note: Benchmarks for these libraries were written with LLM assistance to ensure consistent structure and avoid bias toward a specific language. All results were manually verified and audited.)
 
